@@ -1,4 +1,4 @@
-from rule import Rule
+from firewall.rule import Rule
 
 __rules = [
     Rule(False, "192.168.8.100", "0", "224.0.0.251", "0").get_rule(),

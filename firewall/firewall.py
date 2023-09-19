@@ -1,7 +1,8 @@
 import os
 import csv
 
-from rule_list import get_all_rules
+from firewall.rule_list import get_all_rules
+
 """
 manages a collection of rule object.
 """
@@ -34,10 +35,5 @@ def check_packet(src_addr, dst_addr, src_port, dst_port):
                         continue
         return False
     except Exception as e:
-        print(f"[ERR] Error reading rules: {e}")
+        print(f"[ERR] Error: {e}")
         return False
-
-# print(check_packet("0.0.0.0", "127.0.0.0", 22, 22))
-# print(check_packet("192.168.2.100", "192.168.1.100", 22, 0))
-print(check_packet("192.168.2.100", "100", 80, 90))
-print(check_packet("192.168.3.100", "10.0.0.100", 0, 0))

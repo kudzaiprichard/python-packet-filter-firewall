@@ -8,7 +8,9 @@ def run():
     print("FIREWALL IS RUNNING......")
     try:
         rules = RuleList()
-        rules.add_rule(False,'192.168.36.44', '57881', '93.184.221.240', '80')
+        rules.add_rule(False,'192.168.36.205', '59770', '192.168.36.44', '443')
+        rules.add_rule(True,'192.168.36.44', '60237', '209.197.3.8', '80')
+        rules.add_rule(True,'192.168.36.44', '60181', '192.168.36.205', '53')
         
         packet_manager = Packet(rules.get_all_rules())
         firewall = Firewall(packet_manager)
@@ -16,7 +18,6 @@ def run():
         while True:
             for _ in range(10):
                 firewall.run()
-                print(rules.get_all_rules())
                 time.sleep(100)
 
     except KeyboardInterrupt:

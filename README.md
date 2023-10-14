@@ -8,7 +8,7 @@
     <img src="images/logo/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Firewall `packet filter`</h3>
+  <h3 align="center">Firewall packet filter</h3>
 
   <p align="center">
     A simple python packet filtering firewall
